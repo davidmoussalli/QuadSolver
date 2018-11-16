@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <ctype.h>
 char assertEquals(int a, int b);
 
 int main(int argc, char const *argv[]) {
