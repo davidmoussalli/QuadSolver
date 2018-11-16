@@ -4,6 +4,15 @@
 char assertEquals(int a, int b);
 
 int main(int argc, char const *argv[]) {
+  if(argc!=4){
+     printf("Usage ./a.out input1 input2 input3\nProgram Exitted\n");
+     exit(-1);
+  }
+  if(isalpha(argv[1][0])||isalpha(argv[2][0])||isalpha(argv[3][0])){
+     printf("Usage ./a.out input1 input2 input3\nProgram Exitted\n");
+     exit(-1);
+  }
+	
   float a= atof(argv[1]);
   float b= atof(argv[2]);
   float c= atof(argv[3]);
