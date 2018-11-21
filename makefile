@@ -7,4 +7,4 @@ test: quadSolver.c
 
 unitTest: unitTest.c
 	gcc unitTest.c -lm
-	.'a.out 1 2 1
+	./a.out 1 2 1
