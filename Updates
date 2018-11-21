@@ -1,0 +1,18 @@
+1. Update programming standards to be a single one(example gnu programming standard), put a pdf or a short text whereby 
+   you are showing the license of the items you are using with the current ones being on addendum
+2. put on documentation for gcc, IEEE floating points
+3. Put in FLAGS in programming standards. State what Flags will be used
+4. Choose a license that you will be using
+5. Break up quadsolver.c to main, seperate functions and put it into different directories so that it can be unit testable
+6. In quadsolver.c, take input after running the program
+7. Also, in quadsolver.c, the input should be a double
+8. Validate inputs.
+9. Use CUnit
+10. Try to test with these inputs..
+1 2 1
+2 1 1
+1e37 2e37 1e37
+1e40 2 1 --> discriminant should be calculated
+1 2 1a --> should not accept this
+
+
