@@ -16,3 +16,11 @@
 1 2 1a --> should not accept this
 
 
+11. These should be in programming std
+      -->BSD
+      -->Security Std
+      -->Addendum
+           -gcc 7.x used
+           -CFLAGS - 
+           -Validate args always in every function
+           -log if logging is enabled
