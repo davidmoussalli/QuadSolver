@@ -4,7 +4,7 @@
 3. Put in FLAGS in programming standards. State what Flags will be used
 4. Choose a license that you will be using
 5. Break up quadsolver.c to main, seperate functions and put it into different directories so that it can be unit testable
-6. In quadsolver.c, take input after running the program
+6. In quadsolver.c, take input after running the program. Use fgets for taking input? DONT USE ATOF
 7. Also, in quadsolver.c, the input should be a double
 8. Validate inputs.
 9. Use CUnit
