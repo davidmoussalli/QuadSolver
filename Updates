@@ -24,3 +24,6 @@
            -CFLAGS - 
            -Validate args always in every function
            -log if logging is enabled
+12. error return, don't print
+13. Also, he said to use FLAGS of some sort for each type of value of x1 and x2. Ex: FLAG1 is for if x and y is a root, FLAG 2 is
+    if one of the variable is infinity, FLAG3 is blah blah blah.. Then print FLAG at the end.
