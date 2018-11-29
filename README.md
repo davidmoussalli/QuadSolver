@@ -3,7 +3,7 @@ This program works as a quadratic equation solver. Using make, we have implement
 
 # Programming Standards 
 - GNU Programming Standards
-- FLAGS = -Wall -pedantic -std=c99 
+- FLAGS = -Wall -pedantic -std=c99 -lcunit
  
  ## Addendum
 - Standard used is c99
