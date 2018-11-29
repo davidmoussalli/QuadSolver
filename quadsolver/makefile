@@ -3,11 +3,11 @@ input=$(quadSolver input/input.c)\
 obj=$(input:.gcc=.o)\
 		$(Validator:.gcc=.o)
 
-all: MainQuad.c input
+all: MainQuad.c
 MainQuad.c: input
-	gcc MainQuad.c
+	gcc -o Main MainQuad.c
 
 
-input:
+input: input/inputUnitTest.o
 	gcc -o IUnitTest input/inputUnitTest.c -lcunit
 	./IUnitTest
