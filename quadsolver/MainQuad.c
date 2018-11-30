@@ -3,17 +3,34 @@
 #include <math.h>
 #include <ctype.h>
 #include "input/input.c"
-extern float * input(char const *input1,char const *input2,char const *input3);
+#include "Structs.h"
+#include "Validator/validator.c"
+extern char* input();
+extern ABC Validating(char* UserInput);
+
+ABC abc;
 
 
-int main(int argc, char const *argv[]) {
-inputs(argv[1],argv[2],argv[3]);
-//float *verifiedInputs;
-//verifiedInputs=inputs(argv[1],argv[2],argv[3]); unsure how to pass arrays
-//Outputing=Quad(VeifiedInputs); does not work yet
-//Output(Outputing); does not work yet
-return 0;
-}
+
+int main(int argc, char const *argv[])
+  {
+    //abc.A=100;
+    // abc.B=100;
+    // abc.C=100;
+  printf("something\n" );
+  char* UserInput=malloc(30);
+  UserInput=inputs();
+  char* ValUserInput=malloc(30);
+  abc=Validating(UserInput);
+
+  if(abc.A==100)
+    {
+      return 0;
+    }
+
+  printf("A= %f, B= %f, C=%f\n",abc.A,abc.B,abc.C );
+  return 0;
+  }
 /*  if(argc!=4){
   	printf("Usage ./a.out input1 input2 input3\nProgram Exitted\n");
   	exit(-1);
@@ -69,15 +86,3 @@ Define double a, b, c, root1, root2, discriminant
 //code has not taken into factor of roots that are not real
 End QuadSolver
 */
-@c -*-texinfo-*-
-@c This is part of the GNU Emacs Lisp Reference Manual.
-@c Copyright (C) 1990, 1991, 1992, 1993, 1994, 1999
-@c   Free Software Foundation, Inc.
-@c See the file elisp.texi for copying conditions.
-@c Copyright (C)  2018  Safwan Kadir, Dakota Grant, David Moussalli.
-  Permission is granted to copy, distribute and/or modify this document
-  under the terms of the GNU Free Documentation License, Version 1.3
-  or any later version published by the Free Software Foundation;
-  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
-  Texts.  A copy of the license is included in the section entitled ``GNU
-  Free Documentation License''.
