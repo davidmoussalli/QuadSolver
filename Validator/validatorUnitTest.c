@@ -5,19 +5,21 @@
 #include "validator.c"
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
-extern ABC Validating(char* UserInput);
+#include <CUnit/Automated.h>
+extern ABC Validating(FILE *fd, char* UserInput);
 //
 // void assert_eq(str,a,b) {
 //   if( a != b ) {
 //     fprintf(cunit_log, "%s  LINE %d: %s, %d !== %d\n",
 //               __FILE__ , __LINE__ , str ,  a , b );
 //   }
-
+FILE *fd;
 void equal(){
+	
 	ABC abc;
 	char * input = malloc(30);
 	strcpy(input,"1 2 1\n");
-	abc= Validating(input);
+	abc= Validating(fd,input);
 
 	double a = 1;
 	double b = 2;
@@ -30,6 +32,8 @@ void equal(){
 
 int main()
 {
+	fd = fopen("logFile.log","a");
+	CU_set_output_filename("logFile.xml");
 	CU_initialize_registry();
 	CU_pSuite suite = CU_add_suite("UNIT TEST", 0, 0);
 

@@ -8,7 +8,7 @@
 // #define throw(x) _HadError=true;goto ExitJmp
 ABC abc;
 
-ABC Validating(char* UserInput)
+ABC Validating(FILE *fd, char* UserInput)
 {
   int i=0;
   char *SepUserInput=malloc(30);
@@ -42,6 +42,7 @@ ABC Validating(char* UserInput)
               abc.A=100;
           }
           printf("NO LETTERS ACCEPTED IN THE PROGRAM\n");
+          fprintf(fd, "\nNO LETTERS ACCEPTED IN THE PROGRAM\n");
           abc.A=100;
           return abc;
         }
@@ -50,6 +51,7 @@ ABC Validating(char* UserInput)
         case 1:
         if(strtod(SepUserInput,&err2)==0&&err2!=NULL){
           printf("NO LETTERS ACCEPTED IN THE PROGRAM\n");
+          fprintf(fd, "\nNO LETTERS ACCEPTED IN THE PROGRAM\n");
           abc.A=100;
           return abc;
         }
@@ -58,6 +60,7 @@ ABC Validating(char* UserInput)
         case 2:
         if(strtod(SepUserInput,&err3)==0&&err3!=NULL){
           printf("NO LETTERS ACCEPTED IN THE PROGRAM\n");
+          fprintf(fd, "\nNO LETTERS ACCEPTED IN THE PROGRAM\n");
           abc.A=100;
           return abc;
         }
@@ -84,6 +87,7 @@ ABC Validating(char* UserInput)
     abc.A=100;
     printf("NO LETTERS ACCEPTED IN THE PROGRAM\n");
     printf("Error 1: %s, Error 2: %s, Error 3: %s",err1,err2,err3);
+    fprintf(fd, "\nError 1: %s, Error 2: %s, Error 3: %s\n",err1,err2,err3);
     return abc;
   }
 

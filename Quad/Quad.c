@@ -28,7 +28,7 @@ roots quad(ABC abc) {
 
     }else
     {
-    	printf("Root is an imaginary number\n\n");
+    	//fprintf(fd,"Root is an imaginary number\n\n");
     	//exit(0);
       	root.flag=-1;
     }
