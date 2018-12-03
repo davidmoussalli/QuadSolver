@@ -11,15 +11,16 @@ ABC abc;
 ABC Validating(char* UserInput)
 {
   int i=0;
-  char* SepUserInput=malloc(30);
+  char *SepUserInput=malloc(30);
   abc.A=0;
   abc.B=0;
   abc.C=0;
 
 
-  //printf("test\n" );
+//printf("\n\ntest\n" );
   //float holder;
   SepUserInput=strtok(UserInput," ");
+
   // try{
   //   holder=strtonum(SepUserInput);
   //
@@ -86,6 +87,6 @@ ABC Validating(char* UserInput)
     return abc;
   }
 
-
+    free(SepUserInput);
     return abc;
 }
