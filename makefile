@@ -1,10 +1,18 @@
-all: quadSolver.c
-	gcc quadSolver.c -lm
-	#usage ./a.out input1 input2 input3
+input=$(quadSolver input/input.c)\
+			$(quadSolver Validator/*.c)\
+			$(quadSolver Quad/*.c)
+obj=$(input:.gcc=.o)
 
-test: quadSolver.c
-	./a.out 1 2 1
+all: MainQuad.c
+#RUN make, then run ./IUnitTest then run make
 
-unitTest: unitTest.c
-	gcc unitTest.c -lm
-	./a.out 1 2 1
+MainQuad.c:IUnitTest
+	gcc -o MQuad MainQuad.c -lm
+	./MQuad
+
+IUnitTest: input/inputUnitTest.o
+	gcc -o IUnitTest input/inputUnitTest.c -lcunit
+	./IUnitTest
+
+clean:
+	rm -f *.log *.o *.exe MQuad IUnitTest
